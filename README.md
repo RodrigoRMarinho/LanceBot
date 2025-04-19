@@ -1,3 +1,5 @@
+# 🤖 LanceBot – Robô Inteligente para Licitações Públicas
+
 **LanceBot** é um sistema automatizado para rodar em **MacOS**, capaz de participar de **licitações públicas online** nos principais portais do Brasil, dando **lances automáticos, rápidos e estratégicos**, respeitando margens e limites configuráveis.
 
 ---
@@ -26,13 +28,98 @@
 
 ---
 
-## 📦 Tecnologias Recomendadas
+## 📦 Tecnologias Utilizadas
 
-- Electron.js ou Tauri (desktop)
-- Python (backend e automação)
-- Selenium/Puppeteer/Playwright (acesso aos portais)
-- MongoDB ou SQLite (dados locais)
-- OpenSSL (certificados digitais)
+- Python 3.10+ (backend e automação)
+- Playwright (acesso aos portais)
+- Pytest (testes automatizados)
+
+---
+
+## 🚀 Instalação e Uso
+
+### Pré-requisitos
+- Python 3.10 ou superior
+- pip (gerenciador de pacotes Python)
+
+### Instalação
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/RodrigoRMarinho/LanceBot.git
+cd LanceBot
+```
+
+2. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+
+3. Instale o Playwright:
+```bash
+playwright install
+```
+
+4. Configure suas credenciais:
+   - Renomeie o arquivo `LOGIN.env.example` para `LOGIN.env`
+   - Edite o arquivo com suas credenciais para os portais de licitação
+
+### Uso Básico
+
+Para testar a conexão com um portal específico:
+```bash
+python main.py --test-portal comprasnet
+```
+
+Para testar as estratégias de lance:
+```bash
+python main.py --test-strategy
+```
+
+Para ver todas as opções disponíveis:
+```bash
+python main.py --help
+```
+
+---
+
+## 🧪 Testes
+
+O LanceBot inclui testes automatizados para garantir o funcionamento correto das funcionalidades principais:
+
+```bash
+# Executar todos os testes
+pytest tests/
+
+# Executar testes específicos
+pytest tests/test_bidding.py
+pytest tests/test_logger.py
+pytest tests/test_portal_base.py
+
+# Executar testes com cobertura
+pytest tests/ --cov=src
+```
+
+---
+
+## 📖 Estrutura do Projeto
+
+```
+LanceBot/
+├── src/                    # Código-fonte principal
+│   ├── core/               # Módulos principais
+│   │   ├── logger.py       # Sistema de logging
+│   │   └── bidding.py      # Estratégias de lance
+│   └── portals/            # Integrações com portais
+│       ├── comprasnet/     # Portal ComprasNet
+│       ├── portaldecompras/ # Portal de Compras Públicas
+│       ├── bllcompras/     # Portal BLL Compras
+│       └── licitacoes_e/   # Portal Licitações-e
+├── tests/                  # Testes automatizados
+├── main.py                 # Script principal
+├── requirements.txt        # Dependências do projeto
+└── LOGIN.env               # Arquivo de credenciais (não versionado)
+```
 
 ---
 
@@ -41,9 +128,11 @@
 - [x] Documentação funcional
 - [x] Protótipo UI/UX
 - [x] Publicação no GitHub
-- [ ] Montagem de equipe open source
-- [ ] MVP
-- [ ] Testes
+- [x] Implementação do core do sistema
+- [x] Implementação dos portais
+- [x] Testes automatizados
+- [ ] Interface gráfica com Electron.js ou Tauri
+- [ ] Suporte a certificados digitais
 - [ ] Lançamento Beta
 
 ---
@@ -60,6 +149,9 @@ Estamos abertos a colaborações! Crie um *issue* ou envie um *pull request* par
 ## ⚖️ Licença
 
 Este projeto é de código aberto sob a licença **MIT**.
-## 📖 Configuração do Ambiente
 
-Consulte nosso [guia de desenvolvimento](DEVELOPMENT.md) para configurar o ambiente e começar a contribuir.
+---
+
+## 📖 Configuração do Ambiente de Desenvolvimento
+
+Consulte nosso [guia de desenvolvimento](docs/DEVELOPMENT.md) para configurar o ambiente e começar a contribuir.
