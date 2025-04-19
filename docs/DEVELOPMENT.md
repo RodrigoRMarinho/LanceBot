@@ -7,3 +7,12 @@
 - Certificado digital A1/A3 (para testes de autenticação)
 
 ## 🏗️ Estrutura do Projeto
+src/
+├── core/ # Lógica principal do bot
+│ ├── bidding.py # Estratégias de lance
+│ └── logger.py # Sistema de logs
+├── portals/ # Integrações com portais
+│ └── comprasnet/ # Implementação específica
+└── ui/ # Interface Electron
+├── main.js
+└── renderer.js
