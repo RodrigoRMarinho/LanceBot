@@ -60,3 +60,6 @@ Estamos abertos a colaborações! Crie um *issue* ou envie um *pull request* par
 ## ⚖️ Licença
 
 Este projeto é de código aberto sob a licença **MIT**.
+## 📖 Configuração do Ambiente
+
+Consulte nosso [guia de desenvolvimento](DEVELOPMENT.md) para configurar o ambiente e começar a contribuir.
